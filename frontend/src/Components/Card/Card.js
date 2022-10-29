@@ -8,9 +8,10 @@ import { CSVLink } from "react-csv";
 import CallIcon from '@mui/icons-material/Call';
 import MailIcon from '@mui/icons-material/Mail';
 import DownloadIcon from '@mui/icons-material/Download';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
 
-function DataCard({val, getdata, key}) {
+function DataCard({val, getdata}) {
 
   const headers = [
     {label: 'Name', key: 'name'},
@@ -135,6 +136,7 @@ function DataCard({val, getdata, key}) {
                 <S.Anchor href={`tel:${val.phonenumber}`}><CallIcon /></S.Anchor>
                 {val.email==="" ? <S.Anchor><MailIcon color="disabled" /></S.Anchor> : <S.Anchor href={`mailto:${val.email}`}><MailIcon /></S.Anchor>}
                 {<S.Anchor><CSVLink data={getdata} headers={headers}><DownloadIcon /></CSVLink> </S.Anchor>}
+                {/* <S.Anchor><DeleteIcon onClick={() => deleteCard(val._id)} /></S.Anchor> */}
               </CardActions>
             </Card>
     </S.Wrap>

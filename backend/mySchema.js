@@ -11,22 +11,22 @@ const adoptionSchema = mongoose.Schema({
     institutiontenth: String,
     statetenth: String,
     scoretenth: Number,
-    yeartenth: Number,
+    yeartenth: String,
 
     institutiontwelve: String,
     statetwelve: String,
     scoretwelve: Number,
-    yeartwelve: Number,
+    yeartwelve: String,
 
     institutionbachelor: String,
     statebachelor: String,
     scorebachelor: Number,
-    yearbachelor: Number,
+    yearbachelor: String,
 
     institutionpostgraduate: String,
     statepostgraduate: String,
     scorepostgraduate: Number,
-    yearpostgraduate: Number,
+    yearpostgraduate: String,
 
     email: String,
     altphonenumber: Number

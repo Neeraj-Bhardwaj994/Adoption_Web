@@ -96,22 +96,22 @@ const Homepage = () => {
         institutiontenth: data.institutiontenth,
         statetenth: data.statetenth,
         scoretenth: parseFloat(data.scoretenth),
-        yeartenth: parseInt(data.yeartenth),
+        yeartenth: data.yeartenth,
 
         institutiontwelve: data.institutiontwelve,
         statetwelve: data.statetwelve,
         scoretwelve: parseFloat(data.scoretwelve),
-        yeartwelve: parseInt(data.yeartwelve),
+        yeartwelve: data.yeartwelve,
 
         institutionbachelor: data.institutionbachelor,
         statebachelor: data.statebachelor,
         scorebachelor: parseFloat(data.scorebachelor),
-        yearbachelor: parseInt(data.yearbachelor),
+        yearbachelor: data.yearbachelor,
 
         institutionpostgraduate: data.institutionpostgraduate,
         statepostgraduate: data.statepostgraduate,
         scorepostgraduate: parseFloat(data.scorepostgraduate),
-        yearpostgraduate: parseInt(data.yearpostgraduate),
+        yearpostgraduate: data.yearpostgraduate,
 
         email: data.email,
         altphonenumber: parseInt(data.altphonenumber),
@@ -142,11 +142,12 @@ const Homepage = () => {
                   name="name"
                   placeholder="Name"
                   type="text"
+                  style={{boxShadow: "red !important"}}
                   value={data.name}
                   onChange={handleData}
                   required
                 />
-                {errors && data.name.length<=0 ? <FormFeedback>Name is required</FormFeedback>: ""}
+                {/* {errors && data.name.length<=0 ? <FormFeedback>Name is required</FormFeedback>: ""} */}
               </FormGroup>
             </Col>
             <Col md={4}>
@@ -192,6 +193,7 @@ const Homepage = () => {
                   required
                 >
                   {" "}
+                  <option value="" hidden></option>
                   <option>Below 1 lakh</option>
                   <option>Below 2 lakhs</option>
                   <option>Below 5 lakhs</option>
@@ -307,7 +309,7 @@ const Homepage = () => {
                 <Input
                   id="yeartenth"
                   name="yeartenth"
-                  type="number"
+                  type="month"
                   placeholder="Completion Year"
                   value={data.yeartenth}
                   onChange={handleData}
@@ -362,7 +364,7 @@ const Homepage = () => {
                 <Input
                   id="yeartwelve"
                   name="yeartwelve"
-                  type="number"
+                  type="month"
                   placeholder="Completion Year"
                   value={data.yeartwelve}
                   onChange={handleData}
@@ -417,7 +419,7 @@ const Homepage = () => {
                 <Input
                   id="yearbachelor"
                   name="yearbachelor"
-                  type="number"
+                  type="month"
                   placeholder="Completion Year"
                   value={data.yearbachelor}
                   onChange={handleData}
@@ -472,7 +474,7 @@ const Homepage = () => {
                 <Input
                   id="yearpostgraduate"
                   name="yearpostgraduate"
-                  type="number"
+                  type="month"
                   placeholder="Completion Year"
                   value={data.yearpostgraduate}
                   onChange={handleData}
@@ -487,6 +489,7 @@ const Homepage = () => {
                 variant="contained"
                 style={{ backgroundColor: "yellow", color: "black" }}
                 type="submit"
+                disabled={!data}
                 // onClick={postData}
               >
                 Submit
