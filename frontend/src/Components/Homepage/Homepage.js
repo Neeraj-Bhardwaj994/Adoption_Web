@@ -5,11 +5,20 @@ import axios from "axios";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { Form, Row, Col, FormGroup, Label, Input } from "reactstrap";
+import {
+  Form,
+  Row,
+  Col,
+  FormGroup,
+  Label,
+  Input,
+  FormFeedback,
+} from "reactstrap";
 
 const Homepage = () => {
   const navigate = useNavigate();
 
+  const [errors, setErrors] = useState({});
   const [data, setData] = useState({
     name: "",
     fathername: "",
@@ -42,6 +51,7 @@ const Homepage = () => {
     altphonenumber: "",
   });
 
+
   let value;
   const handleData = (e) => {
     e.preventDefault();
@@ -55,10 +65,25 @@ const Homepage = () => {
     console.log();
   };
 
+  const validateForm = () => {
+    const { name, fathername, age, income, address, phonenumber } = data;
+
+    if (!name && name.length == 0) {
+      setErrors(true);
+    }
+    if (!fathername && fathername.length == 0) {
+      setErrors(true);
+    }
+    if (!age && age.length == 0) {
+      setErrors(true);
+    }
+  };
+
   const handleReset = () => {};
 
   const postData = async (e) => {
     e.preventDefault();
+    validateForm();
     try {
       const res = await axios.post("http://localhost:3000/filldata", {
         name: data.name,
@@ -67,12 +92,12 @@ const Homepage = () => {
         income: data.income,
         address: data.address,
         phonenumber: parseInt(data.phonenumber),
-        
+
         institutiontenth: data.institutiontenth,
         statetenth: data.statetenth,
         scoretenth: parseFloat(data.scoretenth),
         yeartenth: parseInt(data.yeartenth),
-        
+
         institutiontwelve: data.institutiontwelve,
         statetwelve: data.statetwelve,
         scoretwelve: parseFloat(data.scoretwelve),
@@ -121,6 +146,7 @@ const Homepage = () => {
                   onChange={handleData}
                   required
                 />
+                {errors && data.name.length<=0 ? <FormFeedback>Name is required</FormFeedback>: ""}
               </FormGroup>
             </Col>
             <Col md={4}>
@@ -151,11 +177,9 @@ const Homepage = () => {
                 />
               </FormGroup>
             </Col>
-
           </Row>
           <Row>
-
-          <Col md={4}>
+            <Col md={4}>
               <FormGroup>
                 <Label for="income">Annual income of the family*</Label>
                 <Input
@@ -176,7 +200,7 @@ const Homepage = () => {
                 </Input>
               </FormGroup>
             </Col>
-            
+
             <Col md={2}>
               <FormGroup>
                 <Label for="phonenumber">Phone*</Label>
@@ -191,8 +215,6 @@ const Homepage = () => {
                 />
               </FormGroup>
             </Col>
-
-            
 
             <Col md={6}>
               <FormGroup>
@@ -461,15 +483,15 @@ const Homepage = () => {
 
           <Row>
             <S.ButtonWrap>
-            <Button
-              variant="contained"
-              style={{ backgroundColor: "yellow", color: "black" }}
-              type="submit"
-              // onClick={postData}
-            >
-              Submit
-            </Button>
-          </S.ButtonWrap>
+              <Button
+                variant="contained"
+                style={{ backgroundColor: "yellow", color: "black" }}
+                type="submit"
+                // onClick={postData}
+              >
+                Submit
+              </Button>
+            </S.ButtonWrap>
           </Row>
         </Form>
       </S.SecSection>

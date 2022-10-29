@@ -92,47 +92,7 @@ function Adminpage() {
           }
         }).map((val, key) => {
           return (
-            val ? <DataCard val={val} getdata={getdata} key={key} /> : <h1>No Record</h1>
-
-            // <Card key={key} sx={{ minWidth: 300, maxWidth: 320 , my: 4 }}>
-            //   <CardContent>
-            //     <Typography gutterBottom variant="h5" component="div">
-            //       {val.name}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Father's Name: {val.fathername}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Age: {val.age}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Phone number: {val.phonenumber}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Alternative number:{" "}
-            //       {val.altphonenumber ? val.altphonenumber : <span>-</span>}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Recent education: {val.education}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Institution name: {val.institution}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Cgpa/percetage: {val.score}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Email: {val.email ? val.email : <span>-</span>}
-            //     </Typography>
-            //     <Typography variant="body2" color="text.secondary">
-            //       Address: {val.address}
-            //     </Typography>
-            //   </CardContent>
-            //   <CardActions style={{float: "right"}}>
-            //     <S.Anchor href={`tel:${val.phonenumber}`}><CallIcon /></S.Anchor>
-            //     {val.email==="" ? <S.Anchor><MailIcon color="disabled" /></S.Anchor> : <S.Anchor href={`mailto:${val.email}`}><MailIcon /></S.Anchor>}
-            //   </CardActions>
-            // </Card>
+            val ? <DataCard val={val} getdata={getdata} key={key} /> : <h5>No Record</h5>
           );
         })}
       </S.Card>
