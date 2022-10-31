@@ -45,8 +45,8 @@ function Adminauth({setLoggedUser}) {
   return (
     <S.Wrap>
       <Header />
-      <S.SecSection>
         <S.UppertextSec>Admin Credentials</S.UppertextSec>
+      <S.SecSection>
         <Form
         >
               <FormGroup>
@@ -82,7 +82,7 @@ function Adminauth({setLoggedUser}) {
             <S.ButtonWrap>
               <Button
                 variant="text"
-                style={{ color: "#594545" }}
+                style={{ color: "#FBAF41" }}
                 type="button"
                 onClick={() => {
                   navigate('/');
@@ -90,6 +90,7 @@ function Adminauth({setLoggedUser}) {
               >
                 Cancel
               </Button>
+             
               <Button
                 variant="contained"
                 style={{ backgroundColor: "#013870", color: "white" }}

@@ -17,25 +17,25 @@ const HeaderLogin = () => {
   };
   return (
     <S.Wrap>
-      <S.Logo>Adoption Form</S.Logo>
+      <S.Logo href="/"><S.Img src={"Sabar_Logo_img.jpg"} alt="Sabar Logo"></S.Img></S.Logo>
       <S.Navbar>
         <S.Navitems>
-          <Link to="/" style={{ color: "#594545",textDecoration: "none" }}>
+          <Link to="/" style={{ color: "#03175C",textDecoration: "none", fontWeight: 500 }}>
             HOME
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/about" style={{ color: "#594545",textDecoration: "none" }}>
+          <Link to="/about" style={{ color: "#03175C",textDecoration: "none", fontWeight: 500 }}>
             ABOUT
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/contact" style={{ color: "#594545",textDecoration: "none" }}>
+          <Link to="/contact" style={{ color: "#03175C",textDecoration: "none", fontWeight: 500 }}>
             CONTACT
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/admincred3$vCtVAHJ505" style={{ color: "#594545",textDecoration: "none" }}>
+          <Link to="/admincred3$vCtVAHJ505" style={{ color: "#03175C",textDecoration: "none", fontWeight: 500 }}>
             LOGOUT
           </Link>
         </S.Navitems>
@@ -58,10 +58,10 @@ const HeaderLogin = () => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}><Link to="/" style={{ color: "#000",textDecoration: "none" }}>Home</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/about" style={{ color: "#000",textDecoration: "none" }}>About</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/contact" style={{ color: "#000",textDecoration: "none" }}>Contact</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link to="/admincred3$vCtVAHJ505" style={{ color: "#000",textDecoration: "none" }}>Logout</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/" style={{ color: "#000",textDecoration: "none" }}>HOME</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/about" style={{ color: "#000",textDecoration: "none" }}>ABOUT</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/contact" style={{ color: "#000",textDecoration: "none" }}>CONTACT</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to="/admincred3$vCtVAHJ505" style={{ color: "#000",textDecoration: "none" }}>LOGOUT</Link></MenuItem>
       </Menu>
         </S.Ham>
       </S.Navbar>

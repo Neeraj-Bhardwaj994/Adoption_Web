@@ -11,7 +11,7 @@ export const Section = styled.section`
 export const Uppertext = styled.h1`
   font-size: 4em;
   text-align: center;
-  color: #013870;
+  color: #03175C;
   font-weight: bold;
 
   @media (max-width: 768px) {
@@ -26,7 +26,8 @@ export const Uppertext = styled.h1`
 export const Lowertext = styled.h4`
   font-size: 2.5em;
   text-align: center;
-  color: #013870;
+  color: #FBAF41;
+  opacity: 0.8;
 
 
   @media (max-width: 768px) {
@@ -46,14 +47,15 @@ export const SecSection = styled.section`
 export const UppertextSec = styled.h1`
   text-decoration: underline;
   margin: 0.7em 0;
-  color: #013870;
+  color: #03175C;
+  font-size: 1.8em;
 
   @media (max-width: 768px) {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   @media (max-width: 440px) {
-    font-size: 1.2em;
+    font-size: 1.0em;
   }
 `;
 

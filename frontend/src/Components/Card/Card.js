@@ -189,7 +189,7 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
     //   </Card>
     // </S.Wrap>
     <S.Wrap>
-      <Card sx={{ minWidth: 300, maxWidth: 360, my: 2 }}>
+      <Card style={{boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", border: "1px solid lightgrey"}} sx={{ minWidth: 300, maxWidth: 360, my: 2 }}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {val.name}
@@ -406,7 +406,7 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
                 )}
                 {
                   <S.Anchor>
-                    <CSVLink data={individualData} headers={headers}>
+                    <CSVLink filename={"Student_Data.csv"} data={individualData} headers={headers}>
                       <DownloadIcon />
                     </CSVLink>{" "}
                   </S.Anchor>

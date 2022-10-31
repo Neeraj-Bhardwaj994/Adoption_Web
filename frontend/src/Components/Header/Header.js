@@ -18,20 +18,20 @@ const Header = () => {
   };
   return (
     <S.Wrap>
-      <S.Logo>Adoption Form</S.Logo>
+      <S.Logo href="/"><S.Img src={"Sabar_Logo_img.jpg"} alt="Sabar Logo"></S.Img></S.Logo>
       <S.Navbar>
         <S.Navitems>
-          <Link to="/" style={{ color: "#594545",textDecoration: "none" }}>
+          <Link to="/" style={{ color: "#03175C",textDecoration: "none", fontWeight: 500 }}>
             HOME
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/about" style={{ color: "#594545",textDecoration: "none" }}>
+          <Link to="/about" style={{ color: "#03175C",textDecoration: "none", fontWeight: 500 }}>
             ABOUT
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/contact" style={{ color: "#594545",textDecoration: "none" }}>
+          <Link to="/contact" style={{ color: "#03175C",textDecoration: "none", fontWeight: 500 }}>
             CONTACT
           </Link>
         </S.Navitems>
@@ -43,7 +43,7 @@ const Header = () => {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        style={{color: "#594545"}}
+        style={{color: "#03175C", fontSize: "1.8em"}}
       >
       </MenuIcon>
       <Menu

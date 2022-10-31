@@ -94,11 +94,11 @@ function Adminpage() {
       <S.SecSection>
         <S.UppertextSec>Form filled by:</S.UppertextSec>
         <CSVLink
-          filename={"Students_Data.csv"}
+          filename={"All_Students_Data.csv"}
           data={getdata}
           headers={headers}
         >
-          <Button style={{ float: "right" }} variant="text">
+          <Button style={{ float: "right",color: "#03175C"  }} variant="text">
             Download All
           </Button>
         </CSVLink>

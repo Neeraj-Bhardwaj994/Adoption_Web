@@ -4,11 +4,12 @@ export const Wrap = styled.div`
   color: #594545;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 1em 0;
   font-size: 1.2em;
 `;
 
-export const Logo = styled.div``;
+export const Logo = styled.a``;
 
 export const Navbar = styled.div`
   display: flex;
@@ -41,4 +42,11 @@ export const Ham = styled.div`
 export const Menu = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const Img = styled.img`
+  height: 5em;
+  object-fit: cover;
+  border-radius: 50%;
+  
 `;

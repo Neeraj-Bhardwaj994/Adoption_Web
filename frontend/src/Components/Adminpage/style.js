@@ -5,9 +5,9 @@ export const Wrap = styled.div`
 `;
 
 export const MainSection = styled.div`
-  background-color: #ffd93d;
+  background-color: #FBAF41;
   height: 10em;
-  opacity: 0.8;
+  opacity: 0.85;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,7 @@ export const SecSection = styled.div``;
 export const UppertextSec = styled.h1`
   text-decoration: underline;
   margin: 0.7em 0;
-  color: #013870;
+  color: #03175C;
   font-size: 2em;
 
   @media (max-width: 768px) {
@@ -52,7 +52,7 @@ export const Card = styled.div`
 export const Copyrighttext = styled.h6`
  text-align: center;
  margin: 3em 0;
- color: #fff;
+ color: #594545;
 `;
 
 export const Anchor = styled.a`

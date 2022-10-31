@@ -1,8 +1,6 @@
-import { DUMMY_NAME } from '../../../assets/images'
 
-export const ANYNAME = [
-    {
-        "write": "anything",
-        "write": "anything"
-    }
-]
+export const CONTACTDATA = {
+    email: "contact@example.com",
+    phone: "20982304",
+    address: "wofhfsdfnskdn"
+}

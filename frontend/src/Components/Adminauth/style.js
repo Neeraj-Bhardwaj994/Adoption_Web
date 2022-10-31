@@ -6,7 +6,7 @@ export const Wrap = styled.div`
 
 export const SecSection = styled.section`
   display: flex;
-  flex-direction: column;
+  height: 20em;
   align-items: center;
   justify-content: center;
 
@@ -16,14 +16,15 @@ export const UppertextSec = styled.h1`
   text-decoration: underline;
   margin: 0.7em 0;
   text-align: center;
-  color: #013870;
+  color: #03175C;
+  font-size: 2em;
 
   // @media (max-width: 768px) {
-  //   font-size: 1.4em;
+  //   font-size: 1.8em;
   // }
 
   // @media (max-width: 440px) {
-  //   font-size: 1.2em;
+  //   font-size: 1.4em;
   // }
 `;
 
