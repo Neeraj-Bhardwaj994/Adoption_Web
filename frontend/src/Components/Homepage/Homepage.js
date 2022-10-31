@@ -4,6 +4,8 @@ import Header from "../Header/Header";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import {
   Form,
@@ -17,6 +19,18 @@ import {
 
 const Homepage = () => {
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  }
 
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
@@ -58,12 +72,12 @@ const Homepage = () => {
     const newdata = { ...data };
     newdata[e.target.name] = e.target.value;
     setData(newdata);
-    console.log(newdata);
+    // console.log(newdata);
   };
 
-  const handleSubmit = () => {
-    console.log();
-  };
+  // const handleSubmit = () => {
+  //   console.log();
+  // };
 
   const validateForm = () => {
     const { name, fathername, age, income, address, phonenumber } = data;
@@ -78,6 +92,7 @@ const Homepage = () => {
       setErrors(true);
     }
   };
+
 
   const handleReset = () => {};
 
@@ -116,8 +131,40 @@ const Homepage = () => {
         email: data.email,
         altphonenumber: parseInt(data.altphonenumber),
       });
-      console.log(res.data);
-      navigate("/success");
+      setOpen(true);
+      window.scrollTo(0,0);
+      setData({
+        name: "",
+        fathername: "",
+    age: "",
+    income: "",
+    address: "",
+    phonenumber: "",
+
+    institutiontenth: "",
+    statetenth: "",
+    scoretenth: "",
+    yeartenth: "",
+
+    institutiontwelve: "",
+    statetwelve: "",
+    scoretwelve: "",
+    yeartwelve: "",
+
+    institutionbachelor: "",
+    statebachelor: "",
+    scorebachelor: "",
+    yearbachelor: "",
+
+    institutionpostgraduate: "",
+    statepostgraduate: "",
+    scorepostgraduate: "",
+    yearpostgraduate: "",
+
+    email: "",
+    altphonenumber: "",
+
+      });
     } catch (err) {
       console.log(err.message);
     }
@@ -136,28 +183,29 @@ const Homepage = () => {
           <Row>
             <Col md={4}>
               <FormGroup>
-                <Label for="name">Name*</Label>
+                <Label for="name" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Name*</Label>
                 <Input
                   id="name"
                   name="name"
                   placeholder="Name"
                   type="text"
-                  style={{boxShadow: "red !important"}}
+                  style={{border: "2px solid #594545"}}
                   value={data.name}
                   onChange={handleData}
                   required
                 />
-                {/* {errors && data.name.length<=0 ? <FormFeedback>Name is required</FormFeedback>: ""} */}
+                {/* {data.name.length<=0 ? <FormFeedback>Name is required</FormFeedback> : ""} */}
               </FormGroup>
             </Col>
             <Col md={4}>
               <FormGroup>
-                <Label for="fathername">Father's Name*</Label>
+                <Label for="fathername" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Father's Name*</Label>
                 <Input
                   id="fathername"
                   name="fathername"
                   placeholder="Father's Name"
                   type="text"
+                  style={{border: "2px solid #594545"}}
                   value={data.fathername}
                   onChange={handleData}
                   required
@@ -166,12 +214,13 @@ const Homepage = () => {
             </Col>
             <Col md={2}>
               <FormGroup>
-                <Label for="age">Age*</Label>
+                <Label for="age" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Age*</Label>
                 <Input
                   id="age"
                   name="age"
                   placeholder="Age"
                   type="number"
+                  style={{border: "2px solid #594545"}}
                   value={data.age}
                   onChange={handleData}
                   required
@@ -182,12 +231,13 @@ const Homepage = () => {
           <Row>
             <Col md={4}>
               <FormGroup>
-                <Label for="income">Annual income of the family*</Label>
+                <Label for="income" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Annual income of the family*</Label>
                 <Input
                   id="income"
                   name="income"
                   placeholder="Income"
                   type="select"
+                  style={{border: "2px solid #594545"}}
                   value={data.income}
                   onChange={handleData}
                   required
@@ -205,12 +255,13 @@ const Homepage = () => {
 
             <Col md={2}>
               <FormGroup>
-                <Label for="phonenumber">Phone*</Label>
+                <Label for="phonenumber" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Phone*</Label>
                 <Input
                   id="phonenumber"
                   name="phonenumber"
                   placeholder="890XXXXXX"
                   type="number"
+                  style={{border: "2px solid #594545"}}
                   value={data.phonenumber}
                   onChange={handleData}
                   required
@@ -220,12 +271,13 @@ const Homepage = () => {
 
             <Col md={6}>
               <FormGroup>
-                <Label for="address">Address*</Label>
+                <Label for="address" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Address*</Label>
                 <Input
                   id="address"
                   name="address"
                   placeholder="Address"
                   type="text"
+                  style={{border: "2px solid #594545"}}
                   value={data.address}
                   onChange={handleData}
                   required
@@ -235,12 +287,13 @@ const Homepage = () => {
 
             <Col md={3}>
               <FormGroup>
-                <Label for="email">Email</Label>
+                <Label for="email" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Email</Label>
                 <Input
                   id="email"
                   name="email"
                   placeholder="Email (optional)"
                   type="email"
+                  style={{border: "2px solid #594545"}}
                   value={data.email}
                   onChange={handleData}
                 />
@@ -249,12 +302,13 @@ const Homepage = () => {
 
             <Col md={3}>
               <FormGroup>
-                <Label for="altphonenumber">Alternate Phone</Label>
+                <Label for="altphonenumber" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Alternate Phone</Label>
                 <Input
                   id="altphonenumber"
                   name="altphonenumber"
                   placeholder="Alternate (optional)"
                   type="number"
+                  style={{border: "2px solid #594545"}}
                   value={data.altphonenumber}
                   onChange={handleData}
                 />
@@ -267,10 +321,11 @@ const Homepage = () => {
           <Row>
             <Col md={4}>
               <FormGroup>
-                <Label for="institutiontenth">Institution Name</Label>
+                <Label for="institutiontenth" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Institution Name</Label>
                 <Input
                   id="institutiontenth"
                   name="institutiontenth"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Institution Name"
                   value={data.institutiontenth}
                   onChange={handleData}
@@ -280,11 +335,12 @@ const Homepage = () => {
 
             <Col md={3}>
               <FormGroup>
-                <Label for="statetenth">State</Label>
+                <Label for="statetenth" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>State</Label>
                 <Input
                   id="statetenth"
                   name="statetenth"
                   placeholder="State"
+                  style={{border: "2px solid #594545"}}
                   value={data.statetenth}
                   onChange={handleData}
                 />
@@ -292,12 +348,13 @@ const Homepage = () => {
             </Col>
             <Col md={2}>
               <FormGroup>
-                <Label for="scoretenth">Score</Label>
+                <Label for="scoretenth" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Score</Label>
                 <Input
                   id="scoretenth"
                   name="scoretenth"
                   placeholder="Score"
                   type="number"
+                  style={{border: "2px solid #594545"}}
                   value={data.scoretenth}
                   onChange={handleData}
                 />
@@ -305,11 +362,12 @@ const Homepage = () => {
             </Col>
             <Col md={3}>
               <FormGroup>
-                <Label for="yeartenth">Completion year</Label>
+                <Label for="yeartenth" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Completion year</Label>
                 <Input
                   id="yeartenth"
                   name="yeartenth"
                   type="month"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Completion Year"
                   value={data.yeartenth}
                   onChange={handleData}
@@ -322,11 +380,12 @@ const Homepage = () => {
           <Row>
             <Col md={4}>
               <FormGroup>
-                <Label for="institutiontwelve">Institution Name</Label>
+                <Label for="institutiontwelve" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Institution Name</Label>
                 <Input
                   id="institutiontwelve"
                   name="institutiontwelve"
                   placeholder="Institution Name"
+                  style={{border: "2px solid #594545"}}
                   value={data.institutiontwelve}
                   onChange={handleData}
                 />
@@ -335,11 +394,12 @@ const Homepage = () => {
 
             <Col md={3}>
               <FormGroup>
-                <Label for="statetwelve">State</Label>
+                <Label for="statetwelve" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>State</Label>
                 <Input
                   id="statetwelve"
                   name="statetwelve"
                   placeholder="State"
+                  style={{border: "2px solid #594545"}}
                   value={data.statetwelve}
                   onChange={handleData}
                 />
@@ -347,12 +407,13 @@ const Homepage = () => {
             </Col>
             <Col md={2}>
               <FormGroup>
-                <Label for="scoretwelve">Score</Label>
+                <Label for="scoretwelve" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Score</Label>
                 <Input
                   id="scoretwelve"
                   name="scoretwelve"
                   type="number"
                   placeholder="Score"
+                  style={{border: "2px solid #594545"}}
                   value={data.scoretwelve}
                   onChange={handleData}
                 />
@@ -360,11 +421,12 @@ const Homepage = () => {
             </Col>
             <Col md={3}>
               <FormGroup>
-                <Label for="yeartwelve">Completion year</Label>
+                <Label for="yeartwelve" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Completion year</Label>
                 <Input
                   id="yeartwelve"
                   name="yeartwelve"
                   type="month"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Completion Year"
                   value={data.yeartwelve}
                   onChange={handleData}
@@ -377,10 +439,11 @@ const Homepage = () => {
           <Row>
             <Col md={4}>
               <FormGroup>
-                <Label for="institutionbachelor">Institution Name</Label>
+                <Label for="institutionbachelor" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Institution Name</Label>
                 <Input
                   id="institutionbachelor"
                   name="institutionbachelor"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Institution Name"
                   value={data.institutionbachelor}
                   onChange={handleData}
@@ -390,11 +453,12 @@ const Homepage = () => {
 
             <Col md={3}>
               <FormGroup>
-                <Label for="statebachelor">State</Label>
+                <Label for="statebachelor" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>State</Label>
                 <Input
                   id="statebachelor"
                   name="statebachelor"
                   placeholder="State"
+                  style={{border: "2px solid #594545"}}
                   value={data.statebachelor}
                   onChange={handleData}
                 />
@@ -402,11 +466,12 @@ const Homepage = () => {
             </Col>
             <Col md={2}>
               <FormGroup>
-                <Label for="scorebachelor">Score</Label>
+                <Label for="scorebachelor" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Score</Label>
                 <Input
                   id="scorebachelor"
                   name="scorebachelor"
                   type="number"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Score"
                   value={data.scorebachelor}
                   onChange={handleData}
@@ -415,11 +480,12 @@ const Homepage = () => {
             </Col>
             <Col md={3}>
               <FormGroup>
-                <Label for="yearbachelor">Completion year</Label>
+                <Label for="yearbachelor" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Completion year</Label>
                 <Input
                   id="yearbachelor"
                   name="yearbachelor"
                   type="month"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Completion Year"
                   value={data.yearbachelor}
                   onChange={handleData}
@@ -432,10 +498,11 @@ const Homepage = () => {
           <Row>
             <Col md={4}>
               <FormGroup>
-                <Label for="institutionpostgraduate">Institution Name</Label>
+                <Label for="institutionpostgraduate" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Institution Name</Label>
                 <Input
                   id="institutionpostgraduate"
                   name="institutionpostgraduate"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Institution Name"
                   value={data.institutionpostgraduate}
                   onChange={handleData}
@@ -445,11 +512,12 @@ const Homepage = () => {
 
             <Col md={3}>
               <FormGroup>
-                <Label for="statepostgraduate">State</Label>
+                <Label for="statepostgraduate" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>State</Label>
                 <Input
                   id="statepostgraduate"
                   name="statepostgraduate"
                   placeholder="State"
+                  style={{border: "2px solid #594545"}}
                   value={data.statepostgraduate}
                   onChange={handleData}
                 />
@@ -457,12 +525,13 @@ const Homepage = () => {
             </Col>
             <Col md={2}>
               <FormGroup>
-                <Label for="scorepostgraduate">Score</Label>
+                <Label for="scorepostgraduate" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Score</Label>
                 <Input
                   id="scorepostgraduate"
                   name="scorepostgraduate"
                   placeholder="Score"
                   type="number"
+                  style={{border: "2px solid #594545"}}
                   value={data.scorepostgraduate}
                   onChange={handleData}
                 />
@@ -470,11 +539,12 @@ const Homepage = () => {
             </Col>
             <Col md={3}>
               <FormGroup>
-                <Label for="yearpostgraduate">Completion year</Label>
+                <Label for="yearpostgraduate" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Completion year</Label>
                 <Input
                   id="yearpostgraduate"
                   name="yearpostgraduate"
                   type="month"
+                  style={{border: "2px solid #594545"}}
                   placeholder="Completion Year"
                   value={data.yearpostgraduate}
                   onChange={handleData}
@@ -487,7 +557,7 @@ const Homepage = () => {
             <S.ButtonWrap>
               <Button
                 variant="contained"
-                style={{ backgroundColor: "yellow", color: "black" }}
+                style={{ backgroundColor: "#013870", color: "white" }}
                 type="submit"
                 disabled={!data}
                 // onClick={postData}
@@ -497,6 +567,12 @@ const Homepage = () => {
             </S.ButtonWrap>
           </Row>
         </Form>
+
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Response Submitted! 
+        </Alert>
+      </Snackbar>
       </S.SecSection>
       <S.Section>
         <S.Copyrighttext>Copyright 2022 - We are Developers</S.Copyrighttext>

@@ -16,10 +16,14 @@ transform: translate(-50%, -50%);
 export const Text = styled.h1`
   font-size: 3em;
   text-align: center;
-  color: #fff;
+  color: #013870;
   
 
   @media (max-width: 768px) {
     font-size: 2.9em;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 2em;
   }
 `;

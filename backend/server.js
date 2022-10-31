@@ -89,7 +89,7 @@ app.post("/auth", (req, res) => {
 // })
 
 app.post("/login",(req,res)=>{
-  // console.log(req.body);
+  console.log(req.body);
   const {username,password} = req.body;
   AuthData.findOne({username:username},(err,data)=>{
       if(data){
@@ -104,9 +104,21 @@ app.post("/login",(req,res)=>{
   })
 });
 
+app.get("/getdata/:id", (req, res) => {
+  const dataid = req.params.id;
+  console.log(dataid);
+  Data.findById(dataid, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
+
 // Data.find({}, (err,data) => {
 //     if(err) {console.log(err)}
 //     else {console.log(data)}
 // })
 
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+app.listen(PORT, () => console.log(`Harsh is Listening on ${PORT}`));

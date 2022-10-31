@@ -20,23 +20,23 @@ const HeaderLogin = () => {
       <S.Logo>Adoption Form</S.Logo>
       <S.Navbar>
         <S.Navitems>
-          <Link to="/" style={{ color: "#FFF",textDecoration: "none" }}>
-            Home
+          <Link to="/" style={{ color: "#594545",textDecoration: "none" }}>
+            HOME
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/about" style={{ color: "#FFF",textDecoration: "none" }}>
-            About
+          <Link to="/about" style={{ color: "#594545",textDecoration: "none" }}>
+            ABOUT
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/contact" style={{ color: "#FFF",textDecoration: "none" }}>
-            Contact
+          <Link to="/contact" style={{ color: "#594545",textDecoration: "none" }}>
+            CONTACT
           </Link>
         </S.Navitems>
         <S.Navitems>
-          <Link to="/admincred3$vCtVAHJ505" style={{ color: "#FFF",textDecoration: "none" }}>
-            Logout
+          <Link to="/admincred3$vCtVAHJ505" style={{ color: "#594545",textDecoration: "none" }}>
+            LOGOUT
           </Link>
         </S.Navitems>
 

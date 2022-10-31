@@ -48,15 +48,15 @@ function Adminauth({setLoggedUser}) {
       <S.SecSection>
         <S.UppertextSec>Admin Credentials</S.UppertextSec>
         <Form
-          style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}
         >
               <FormGroup>
-                <Label for="username">Username</Label>
+                <Label for="username" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Username</Label>
                 <Input
                   id="username"
                   name="username"
                   placeholder="Username"
                   type="text"
+                  style={{border: "2px solid #594545"}}
                   value={data.username}
                   onChange={handleData}
                   required
@@ -65,12 +65,13 @@ function Adminauth({setLoggedUser}) {
             
             
               <FormGroup>
-                <Label for="password">Password</Label>
+                <Label for="password" style={{color: "#594545", fontWeight: 630, fontSize: "1.1em"}}>Password</Label>
                 <Input
                   id="password"
                   name="password"
                   placeholder="Password"
                   type="text"
+                  style={{border: "2px solid #594545"}}
                   value={data.password}
                   onChange={handleData}
                   required
@@ -81,7 +82,7 @@ function Adminauth({setLoggedUser}) {
             <S.ButtonWrap>
               <Button
                 variant="text"
-                style={{ color: "#FFF" }}
+                style={{ color: "#594545" }}
                 type="button"
                 onClick={() => {
                   navigate('/');
@@ -91,7 +92,7 @@ function Adminauth({setLoggedUser}) {
               </Button>
               <Button
                 variant="contained"
-                style={{ backgroundColor: "yellow", color: "black" }}
+                style={{ backgroundColor: "#013870", color: "white" }}
                 type="submit"
                 onClick={e => getCred(e)}
               >

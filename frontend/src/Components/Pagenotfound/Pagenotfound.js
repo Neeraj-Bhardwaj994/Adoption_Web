@@ -9,7 +9,7 @@ function Pagenotfound() {
     <S.Wrap>
       <Header />
       <S.Section>
-        <S.Text>This page doesn't exist! <Link to="/" style={{color: "#ffd93d"}}>Go Back</Link></S.Text>
+        <S.Text>This page doesn't exist! <Link to="/" style={{color: "#594545"}}>Go Back</Link></S.Text>
       </S.Section>
     </S.Wrap>
   );

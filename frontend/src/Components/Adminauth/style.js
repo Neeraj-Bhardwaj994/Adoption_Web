@@ -16,6 +16,7 @@ export const UppertextSec = styled.h1`
   text-decoration: underline;
   margin: 0.7em 0;
   text-align: center;
+  color: #013870;
 
   // @media (max-width: 768px) {
   //   font-size: 1.4em;

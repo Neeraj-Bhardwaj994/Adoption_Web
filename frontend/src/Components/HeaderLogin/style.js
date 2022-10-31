@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
-  color: #ffffff;
+color: #594545;
   display: flex;
   justify-content: space-between;
   margin: 1em 0;

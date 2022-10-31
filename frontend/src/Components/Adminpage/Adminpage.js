@@ -9,8 +9,16 @@ import { Button } from "@mui/material";
 import Pagination from "../Pagination/Pagination";
 
 function Adminpage() {
+  const [getdata, setGetdata] = useState([]);
   const [searchterm, setSearchterm] = useState("");
   const [loading, setLoading] = useState(false);
+  const [currentpage, setCurrentpage] = useState(1);
+  const [cardPerPage, setCardPerPage] = useState(1);
+  const [modaldata, setModaldata] = useState([]);
+
+  const lastcardindex = currentpage * cardPerPage;
+  const firstcardindex = lastcardindex - cardPerPage;
+  const currentCards = getdata.slice(firstcardindex, lastcardindex);
 
   const headers = [
     { label: "Name", key: "name" },
@@ -42,29 +50,32 @@ function Adminpage() {
     { label: "Post Graduation Score", key: "scorepostgraduate" },
     { label: "Post Graduation Completion year", key: "yearpostgraduate" },
 
-    { label: "Institution Name", key: "institution" },
-    { label: "CGPA/Percentage", key: "score" },
     { label: "Email", key: "email" },
     { label: "Alternative Phone Number", key: "altphonenumber" },
   ];
-  const [getdata, setGetdata] = useState([]);
+  
 
   useEffect(() => {
-    setLoading(true);
-    axios.get("http://localhost:3000/getdata").then((response) => {
-      setGetdata(response.data);
-      setLoading(false);
-    });
+    async function fetchData() {
+      setLoading(true);
+      const fetcthingData = await axios
+        .get("http://localhost:3000/getdata")
+        .then((response) => {
+          setGetdata(response.data);
+          setLoading(false);
+        });
+    }
+    fetchData();
   }, []);
 
-  const [currentpage, setCurrentpage] = useState(1);
-  const [cardPerPage, setCardPerPage] = useState(1);
-
-  const lastcardindex = currentpage * cardPerPage;
-  const firstcardindex = lastcardindex - cardPerPage;
-  const currentCards = getdata.slice(firstcardindex, lastcardindex);
-
-
+  const getMoredetails = async (id) => {
+    const fetcthingModalData = await axios
+    .get(`http://localhost:3000/getdata/${id}`)
+    .then((response) => {
+      setModaldata(response.data);
+    })
+  }
+  
   // const deleteCard = (id) => {
   //   axios.delete(`http://localhost:3000/getdata/${id}`).then((result) => {
   //     result.json().then((res) => {
@@ -124,7 +135,7 @@ function Adminpage() {
           );
         })} */}
         {loading ? (
-          <h4 style={{ color: "white" }}>loading...</h4>
+          <h4 style={{ color: "black" }}>Loading...</h4>
         ) : (
           getdata
             .sort((a, b) => a.name.localeCompare(b.name))
@@ -139,9 +150,9 @@ function Adminpage() {
             })
             .map((val, key) => {
               return val ? (
-                <DataCard val={val} getdata={getdata} key={key} />
+                <DataCard val={val} getdata={getdata} key={key} getMoredetails={getMoredetails} modaldata={modaldata} />
               ) : (
-                <h5>No Record</h5>
+                <h4>No Record</h4>
               );
             })
         )}

@@ -27,7 +27,7 @@ export const SecSection = styled.div``;
 export const UppertextSec = styled.h1`
   text-decoration: underline;
   margin: 0.7em 0;
-  color: #fff;
+  color: #013870;
   font-size: 2em;
 
   @media (max-width: 768px) {
