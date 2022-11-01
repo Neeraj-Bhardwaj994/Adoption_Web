@@ -5,7 +5,7 @@ export const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1em 0;
+  margin: 0.3em 0;
   font-size: 1.2em;
 `;
 
@@ -30,7 +30,7 @@ export const Navitems = styled.div`
 export const Ham = styled.div`
   display: none;
 
-  &:focus {
+  &:active {
     color: blue;
   }
 
@@ -45,7 +45,7 @@ export const Menu = styled.div`
 `;
 
 export const Img = styled.img`
-  height: 5em;
+  height: 4em;
   object-fit: cover;
   border-radius: 50%;
   

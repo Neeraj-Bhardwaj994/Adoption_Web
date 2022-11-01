@@ -14,7 +14,7 @@ export const SecSection = styled.section`
 
 export const UppertextSec = styled.h1`
   text-decoration: underline;
-  margin: 0.7em 0;
+  margin: 0.4em 0;
   text-align: center;
   color: #03175C;
   font-size: 2em;
@@ -34,3 +34,16 @@ export const ButtonWrap = styled.div`
   align-items: center;
   margin: 2em 0;
 `;
+
+export const Img = styled.img`
+  height: 12em;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+`;
+
+export const Left = styled.div``;
+
+export const Right = styled.div``;

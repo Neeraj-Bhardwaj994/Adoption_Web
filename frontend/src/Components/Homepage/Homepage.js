@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+
+
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import {
   Form,
@@ -32,7 +34,6 @@ const Homepage = () => {
     setOpen(false);
   };
 
-  const [errors, setErrors] = useState({});
   const [data, setData] = useState({
     name: "",
     fathername: "",
@@ -66,37 +67,17 @@ const Homepage = () => {
   });
 
   let value;
-  const handleData = (e) => {
+  const handleData = async (e) => {
     e.preventDefault();
     const newdata = { ...data };
     newdata[e.target.name] = e.target.value;
     setData(newdata);
-    // console.log(newdata);
-  };
-
-  // const handleSubmit = () => {
-  //   console.log();
-  // };
-
-  const validateForm = () => {
-    const { name, fathername, age, income, address, phonenumber } = data;
-
-    if (!name && name.length == 0) {
-      setErrors(true);
-    }
-    if (!fathername && fathername.length == 0) {
-      setErrors(true);
-    }
-    if (!age && age.length == 0) {
-      setErrors(true);
-    }
   };
 
   const handleReset = () => {};
 
   const postData = async (e) => {
     e.preventDefault();
-    validateForm();
     try {
       const res = await axios.post("http://localhost:3000/filldata", {
         name: data.name,
@@ -301,11 +282,12 @@ const Homepage = () => {
                 <Input
                   id="phonenumber"
                   name="phonenumber"
-                  placeholder="890XXXXXX"
+                  placeholder="890xxxxxxx"
                   type="number"
                   style={{ border: "2px solid #594545" }}
                   value={data.phonenumber}
                   onChange={handleData}
+                  invalid={data.phonenumber.length > 10}
                   required
                 />
               </FormGroup>
@@ -380,6 +362,7 @@ const Homepage = () => {
                   style={{ border: "2px solid #594545" }}
                   value={data.altphonenumber}
                   onChange={handleData}
+                  invalid={data.altphonenumber.length > 10}
                 />
               </FormGroup>
             </Col>
@@ -781,7 +764,12 @@ const Homepage = () => {
           </Row>
         </Form>
 
-        <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          open={open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
           <Alert
             onClose={handleClose}
             severity="success"

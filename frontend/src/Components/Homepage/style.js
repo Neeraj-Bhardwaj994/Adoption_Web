@@ -64,6 +64,11 @@ export const ButtonWrap = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2em 0;
+  transition: all .25s ease-in-out;
+
+  &hover: {
+    trasform: scale(1.2);
+  }
 `;
 
 export const Copyrighttext = styled.h6`

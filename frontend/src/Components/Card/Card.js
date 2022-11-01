@@ -55,141 +55,8 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
   ];
 
   return (
-    // <S.Wrap>
-    //   <Card sx={{ minWidth: 360, maxWidth: 360, my: 4 }}>
-    //     <CardContent>
-    //       <Typography gutterBottom variant="h5" component="div">
-    //         {val.name}
-    //       </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Father's Name:</span>{" "}
-    //   {val.fathername}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Age:</span> {val.age}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Income:</span> {val.income}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Phone number:</span>{" "}
-    //   {val.phonenumber}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Alternative number:</span>{" "}
-    //   {val.altphonenumber ? val.altphonenumber : <span>-</span>}
-    // </Typography>
-
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>10th Institution name: </span>
-    //   {val.institutiontenth ? val.institutiontenth : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>10th State:</span>{" "}
-    //   {val.statetenth ? val.statetenth : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>10th Score:</span>{" "}
-    //   {val.scoretenth ? val.scoretenth : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>10th Year:</span>{" "}
-    //   {val.yeartenth ? val.yeartenth : <span>-</span>}
-    // </Typography>
-
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>12th Institution name:</span>{" "}
-    //   {val.institutiontwelve ? val.institutiontwelve : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>12th State:</span>{" "}
-    //   {val.statetwelve ? val.statetwelve : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>12th Score:</span>{" "}
-    //   {val.scoretwelve ? val.scoretwelve : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>12th year:</span>{" "}
-    //   {val.yeartwelve ? val.yeartwelve : <span>-</span>}
-    // </Typography>
-
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>
-    //     Bachelor Institution name:
-    //   </span>{" "}
-    //   {val.institutionbachelor ? val.institutionbachelor : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Bachelor State:</span>{" "}
-    //   {val.statebachelor ? val.statebachelor : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Bachelor Score:</span>{" "}
-    //   {val.scorebachelor ? val.scorebachelor : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Bachelor year:</span>{" "}
-    //   {val.yearbachelor ? val.yearbachelor : <span>-</span>}
-    // </Typography>
-
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>
-    //     Postgraduation Institution name:
-    //   </span>{" "}
-    //   {val.institutionpostgraduate ? (
-    //     val.institutionpostgraduate
-    //   ) : (
-    //     <span>-</span>
-    //   )}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Postgraduation State:</span>{" "}
-    //   {val.statepostgraduate ? val.statepostgraduate : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Postgraduation Score:</span>{" "}
-    //   {val.scorepostgraduate ? val.scorepostgraduate : <span>-</span>}
-    // </Typography>
-    // <Typography variant="body2" color="text.secondary">
-    //   <span style={{ fontWeight: "bold" }}>Postgraduation year:</span>{" "}
-    //   {val.yearpostgraduate ? val.yearpostgraduate : <span>-</span>}
-    // </Typography>
-
-    //       <Typography variant="body2" color="text.secondary">
-    //         <span style={{ fontWeight: "bold" }}>Email:</span>{" "}
-    //         {val.email ? val.email : <span>-</span>}
-    //       </Typography>
-    //       <Typography variant="body2" color="text.secondary">
-    //         <span style={{ fontWeight: "bold" }}>Address:</span> {val.address}
-    //       </Typography>
-    //     </CardContent>
-    //     <CardActions style={{ float: "right" }}>
-    //       <S.Anchor href={`tel:${val.phonenumber}`}>
-    //         <CallIcon />
-    //       </S.Anchor>
-    //       {val.email === "" ? (
-    //         <S.Anchor>
-    //           <MailIcon color="disabled" />
-    //         </S.Anchor>
-    //       ) : (
-    //         <S.Anchor href={`mailto:${val.email}`}>
-    //           <MailIcon />
-    //         </S.Anchor>
-    //       )}
-    //       {
-    //         <S.Anchor>
-    //           <CSVLink data={getdata} headers={headers}>
-    //             <DownloadIcon />
-    //           </CSVLink>{" "}
-    //         </S.Anchor>
-    //       }
-    //       {/* <S.Anchor><DeleteIcon onClick={() => deleteCard(val._id)} /></S.Anchor> */}
-    //     </CardActions>
-    //   </Card>
-    // </S.Wrap>
     <S.Wrap>
-      <Card style={{boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", border: "1px solid lightgrey"}} sx={{ minWidth: 300, maxWidth: 360, my: 2 }}>
+      <Card style={{boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", border: "1px solid lightgrey", borderRadius: 20}} sx={{ minWidth: 300, maxWidth: 360, my: 2 }}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {val.name}
@@ -203,7 +70,7 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
         </CardContent>
         <CardActions style={{ float: "right" }}>
           <S.Anchor href={`tel:${val.phonenumber}`}>
-            <CallIcon />
+            <CallIcon style={{color: "#269d54"}}/>
           </S.Anchor>
           {val.email === "" ? (
             <S.Anchor>
@@ -211,16 +78,9 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
             </S.Anchor>
           ) : (
             <S.Anchor href={`mailto:${val.email}`}>
-              <MailIcon />
+              <MailIcon style={{color: "#004F9F"}}/>
             </S.Anchor>
           )}
-          {/* {
-            <S.Anchor>
-              <CSVLink data={getdata} headers={headers}>
-                <DownloadIcon />
-              </CSVLink>{" "}
-            </S.Anchor>
-          } */}
           <S.Anchor>
             <ArrowForwardIcon
               style={{cursor: 'pointer'}}
@@ -231,7 +91,7 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
             />
             <Modal isOpen={modal} toggle={() => setModal(!modal)}>
               <ModalHeader toggle={() => setModal(!modal)}>
-                {modaldata.name}
+                <span style={{fontWeight: 800}}>{modaldata.name}</span>
               </ModalHeader>
               <ModalBody>
                 <Typography variant="body2" color="text.secondary">
@@ -393,7 +253,7 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
               </ModalBody>
               <ModalFooter style={{float: "left"}}>
                 <S.Anchor href={`tel:${modaldata.phonenumber}`}>
-                  <CallIcon />
+                  <CallIcon style={{color: "#269d54"}}/>
                 </S.Anchor>
                 {modaldata.email === "" ? (
                   <S.Anchor>
@@ -401,7 +261,7 @@ function DataCard({ val, getdata, getMoredetails, modaldata }) {
                   </S.Anchor>
                 ) : (
                   <S.Anchor href={`mailto:${modaldata.email}`}>
-                    <MailIcon />
+                    <MailIcon style={{color: "#004F9F"}}/>
                   </S.Anchor>
                 )}
                 {

@@ -121,19 +121,6 @@ function Adminpage() {
       </S.SecSection>
 
       <S.Card>
-        {/* {currentCards.sort((a, b) => a.name.localeCompare(b.name)).filter((val) => {
-          if (searchterm == "") {
-            return val;
-          } else if (
-            val.name.toLowerCase().includes(searchterm.toLowerCase())
-          ) {
-            return val;
-          }
-        }).map((val, key) => {
-          return (
-            val ? <DataCard val={val} getdata={getdata} key={key} /> : <h5>No Record</h5>
-          );
-        })} */}
         {loading ? (
           <h4 style={{ color: "black" }}>Loading...</h4>
         ) : (

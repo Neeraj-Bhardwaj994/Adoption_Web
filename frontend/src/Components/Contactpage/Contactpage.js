@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import { CONTACTDATA } from "./config/data";
+
 import Header from "../Header/Header";
-import Card from "@mui/material/Card";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
-import RoomIcon from "@mui/icons-material/Room";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
+
+import {
+  Form,
+  Row,
+  Col,
+  FormGroup,
+  Label,
+  Input,
+  FormFeedback,
+} from "reactstrap";
+import { Box, Button } from "@mui/material";
 
 function Contactpage() {
   return (
@@ -17,52 +21,94 @@ function Contactpage() {
       <S.MainSection>
         <S.Text>Get in touch</S.Text>
       </S.MainSection>
-      <S.SecSection>
-        <Card sx={{ minWidth: 350, maxWidth: 360, minHeight: 150, my: 2 }}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Email <EmailIcon style={{ color: "blue" }} />
-            </Typography>
-            <Typography gutterBottom variant="h6" component="div">
-              <S.Anchor href={`mailto:${CONTACTDATA.email}`}>
-                {CONTACTDATA.email}
-              </S.Anchor>
-            </Typography>
-          </CardContent>
-        </Card>
-
-        <Card sx={{ minWidth: 350, maxWidth: 360, minHeight: 150, my: 2 }}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Phone <PhoneIcon style={{ color: "green" }} />
-            </Typography>
-            <Typography gutterBottom variant="h6" component="div">
-              <S.Anchor href={`tel:${CONTACTDATA.phone}`}>
-                {CONTACTDATA.phone}
-              </S.Anchor>
-            </Typography>
-          </CardContent>
-        </Card>
-
-        <Card sx={{ minWidth: 350, maxWidth: 360, minHeight: 150, my: 2 }}>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Address <RoomIcon style={{ color: "orange" }} />
-            </Typography>
-            <Typography gutterBottom variant="h6" component="div">
-              {/* <S.Anchor href={`https://google.com/${CONTACTDATA.address}`}>
-            {CONTACTDATA.address}
-          </S.Anchor> */}
-              {CONTACTDATA.address}
-            </Typography>
-          </CardContent>
-        </Card>
-      </S.SecSection>
 
       <S.ThirdSection>
-        <S.LeftDiv>I am left</S.LeftDiv>
-        <S.RightDiv>I am Right</S.RightDiv>
+        <S.LeftDiv></S.LeftDiv>
+        <S.RightDiv>
+          <S.SomeText>Contact us</S.SomeText>
+          <S.FormDiv>
+            <Box
+              sx={{
+                width: 300,
+                height: 300,
+              }}
+            >
+              <Form>
+                <Row>
+                  <FormGroup>
+                    <Label
+                      for="name"
+                      style={{
+                        color: "#594545",
+                        fontWeight: 630,
+                        fontSize: "1.1em",
+                      }}
+                    >
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      placeholder="Name"
+                      type="text"
+                      style={{ border: "2px solid #594545" }}
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label
+                      for="email"
+                      style={{
+                        color: "#594545",
+                        fontWeight: 630,
+                        fontSize: "1.1em",
+                      }}
+                    >
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      type="text"
+                      style={{ border: "2px solid #594545" }}
+                    />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Label
+                      for="phonenumber"
+                      style={{
+                        color: "#594545",
+                        fontWeight: 630,
+                        fontSize: "1.1em",
+                      }}
+                    >
+                      Phone*
+                    </Label>
+                    <Input
+                      id="phonenumber"
+                      name="phonenumber"
+                      placeholder="890xxxxxxx"
+                      type="number"
+                      style={{ border: "2px solid #594545" }}
+                    />
+                  </FormGroup>
+                </Row>
+                <S.ButtonWrap>
+                  <Button
+                    variant="contained"
+                    style={{ backgroundColor: "#03175C", color: "white" }}
+                    type="submit"
+                  >
+                    Submit
+                  </Button>
+                </S.ButtonWrap>
+              </Form>
+            </Box>
+          </S.FormDiv>
+        </S.RightDiv>
       </S.ThirdSection>
+      <S.Copyrighttext>Copyright 2022 - We are Developers</S.Copyrighttext>
     </S.Wrap>
   );
 }

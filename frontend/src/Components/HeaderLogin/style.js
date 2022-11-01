@@ -5,7 +5,7 @@ color: #594545;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1em 0;
+  margin: 0.3em 0;
   font-size: 1.2em;
 `;
 
