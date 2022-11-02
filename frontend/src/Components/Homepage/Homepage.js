@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 
-
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import {
   Form,
@@ -19,9 +18,11 @@ import {
   FormFeedback,
 } from "reactstrap";
 
+
 const Homepage = () => {
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = useState(false);
 
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -78,6 +79,7 @@ const Homepage = () => {
 
   const postData = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const res = await axios.post("http://localhost:3000/filldata", {
         name: data.name,
@@ -110,6 +112,7 @@ const Homepage = () => {
         email: data.email,
         altphonenumber: parseInt(data.altphonenumber),
       });
+      setLoading(false);
       setOpen(true);
       window.scrollTo(0, 0);
       setData({
@@ -779,8 +782,9 @@ const Homepage = () => {
           </Alert>
         </Snackbar>
       </S.SecSection>
+      
       <S.Section>
-        <S.Copyrighttext>Copyright 2022 - We are Developers</S.Copyrighttext>
+        <S.Copyrighttext>Copyright 2022 - Sabar Foundation</S.Copyrighttext>
       </S.Section>
     </S.Wrap>
   );

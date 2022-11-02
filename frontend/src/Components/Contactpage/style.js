@@ -24,8 +24,6 @@ export const Text = styled.h1`
   }
 `;
 
-
-
 export const ThirdSection = styled.div`
   display: flex;
   flex: 1;
@@ -46,7 +44,7 @@ export const LeftDiv = styled.div`
 `;
 
 export const RightDiv = styled.div`
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   height: 40em;
   width: 50%;
   @media (max-width: 768px) {
@@ -85,6 +83,6 @@ export const SomeText = styled.h2`
 `;
 
 export const Copyrighttext = styled.h6`
-
-text-align: center; 
- color: #594545;`;
+  text-align: center;
+  color: #594545;
+`;

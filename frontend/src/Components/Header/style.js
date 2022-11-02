@@ -22,7 +22,7 @@ export const Navitems = styled.div`
     display: none;
   }
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 `;
@@ -48,5 +48,4 @@ export const Img = styled.img`
   height: 4em;
   object-fit: cover;
   border-radius: 50%;
-  
 `;

@@ -1,35 +1,35 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const adoptionSchema = mongoose.Schema({
-    name: String,
-    fathername: String,
-    age: Number,
-    income: String,
-    phonenumber: Number,
-    address: String,
+  name: String,
+  fathername: String,
+  age: Number,
+  income: String,
+  phonenumber: Number,
+  address: String,
 
-    institutiontenth: String,
-    statetenth: String,
-    scoretenth: Number,
-    yeartenth: String,
+  institutiontenth: String,
+  statetenth: String,
+  scoretenth: Number,
+  yeartenth: String,
 
-    institutiontwelve: String,
-    statetwelve: String,
-    scoretwelve: Number,
-    yeartwelve: String,
+  institutiontwelve: String,
+  statetwelve: String,
+  scoretwelve: Number,
+  yeartwelve: String,
 
-    institutionbachelor: String,
-    statebachelor: String,
-    scorebachelor: Number,
-    yearbachelor: String,
+  institutionbachelor: String,
+  statebachelor: String,
+  scorebachelor: Number,
+  yearbachelor: String,
 
-    institutionpostgraduate: String,
-    statepostgraduate: String,
-    scorepostgraduate: Number,
-    yearpostgraduate: String,
+  institutionpostgraduate: String,
+  statepostgraduate: String,
+  scorepostgraduate: Number,
+  yearpostgraduate: String,
 
-    email: String,
-    altphonenumber: Number
+  email: String,
+  altphonenumber: Number,
 });
 
-export default mongoose.model('dataSchema', adoptionSchema);
+export default mongoose.model("dataSchema", adoptionSchema);

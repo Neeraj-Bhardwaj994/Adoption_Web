@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrap = styled.div`
-color: #594545;
+  color: #594545;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@ export const Navitems = styled.div`
     display: none;
   }
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 `;
@@ -44,5 +44,4 @@ export const Img = styled.img`
   height: 5em;
   object-fit: cover;
   border-radius: 50%;
-  
 `;

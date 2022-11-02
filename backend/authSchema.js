@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const authSchema = mongoose.Schema({
-    username: String,
-    password: String
+  username: String,
+  password: String,
 });
 
-export default mongoose.model('loginSchema', authSchema);
+export default mongoose.model("loginSchema", authSchema);

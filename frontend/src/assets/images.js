@@ -1,1 +1,0 @@
-// export const DUMMY_NAME = require("./res/images")

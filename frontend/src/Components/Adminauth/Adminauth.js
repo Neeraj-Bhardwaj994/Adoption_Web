@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import { ANYNAME } from "../Footer/config/data";
 import Header from "../Header/Header";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -31,7 +30,7 @@ function Adminauth({ setLoggedUser }) {
 
   const getCred = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/login", data).then((response) => {
+    axios.post("http://localhost:3000/login", data).then((response) => {
       alert(response.data.message);
       setLoggedUser(response.data.data);
       navigate("/admin&931Ea1nz7B&");

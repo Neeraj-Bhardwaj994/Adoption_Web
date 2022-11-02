@@ -1,6 +1,5 @@
 import React from "react";
 import * as S from "./style";
-import { ANYNAME } from "../Footer/config/data";
 import Header from "../Header/Header";
 import { Avatar, Box } from "@mui/material";
 import { CONTACTDATA } from "./config/data";
@@ -28,8 +27,16 @@ function Aboutpage() {
                 height: "20em",
               }}
             >
-            <S.Heading>Sabar Foundation</S.Heading>
-            <S.Para>  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </S.Para>
+              <S.Heading>Sabar Foundation</S.Heading>
+              <S.Para>
+                {" "}
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.{" "}
+              </S.Para>
             </Box>
           </S.FormDiv>
         </S.RightDiv>
@@ -37,7 +44,13 @@ function Aboutpage() {
       <S.SecSection>
         <Card
           sx={{ minWidth: 350, maxWidth: 360, minHeight: 150, my: 2 }}
-          style={{ backgroundColor: "#FFE8C3", opacity: 0.8, borderRadius: 20, boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", border: "none" }}
+          style={{
+            backgroundColor: "#FFE8C3",
+            opacity: 0.8,
+            borderRadius: 20,
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+            border: "none",
+          }}
         >
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -53,7 +66,13 @@ function Aboutpage() {
 
         <Card
           sx={{ minWidth: 350, maxWidth: 360, minHeight: 150, my: 2 }}
-          style={{ backgroundColor: "#FAC6DF", opacity: 0.8, borderRadius: 20, boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", border: "none" }}
+          style={{
+            backgroundColor: "#FAC6DF",
+            opacity: 0.8,
+            borderRadius: 20,
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+            border: "none",
+          }}
         >
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -69,7 +88,13 @@ function Aboutpage() {
 
         <Card
           sx={{ minWidth: 350, maxWidth: 360, minHeight: 150, my: 2 }}
-          style={{ backgroundColor: "#DCCEFE", opacity: 0.8, borderRadius: 20, boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px", border: "none" }}
+          style={{
+            backgroundColor: "#DCCEFE",
+            opacity: 0.8,
+            borderRadius: 20,
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+            border: "none",
+          }}
         >
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -81,7 +106,7 @@ function Aboutpage() {
           </CardContent>
         </Card>
       </S.SecSection>
-      <S.Copyrighttext>Copyright 2022 - We are Developers</S.Copyrighttext>
+      <S.Copyrighttext>Copyright 2022 - Sabar Foundation</S.Copyrighttext>
     </S.Wrap>
   );
 }

@@ -1,9 +1,9 @@
 import express, { request } from "express";
 import mongoose from "mongoose";
 import Data from "./mySchema.js";
+import Contact from "./contactSchema.js";
 import AuthData from "./authSchema.js";
-import cors from 'cors'
-
+import cors from "cors";
 const PORT = process.env.PORT || 5000;
 const connectionUrl =
   "mongodb+srv://neerajbhardwaj:QODQ0ZpygIMstsjJ@cluster0.afnhzde.mongodb.net/?retryWrites=true&w=majority";
@@ -25,13 +25,9 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
   () => {
-    console.log("Connection Successfully");
+    console.log("Connected Successfully");
   }
 );
-
-// app.get("/", (req,res) => {
-//     res.status(200).send("Hello world");
-// });
 
 app.get("/", (req, res) => {
   res.status(200).send("Hello world");
@@ -44,7 +40,6 @@ app.post("/filldata", (req, res) => {
       res.status(500).send(err);
     } else {
       res.status(200).send(data);
-      console.log(data);
     }
   });
 });
@@ -55,7 +50,27 @@ app.get("/getdata", (req, res) => {
       res.status(500).send(err);
     } else {
       res.status(200).send(data);
-      console.log(data);
+    }
+  });
+});
+
+app.post("/contactdata", (req, res) => {
+  const contactdata = req.body;
+  Contact.create(contactdata, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
+
+app.get("/getcontactdata", (req, res) => {
+  Contact.find({}, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
     }
   });
 });
@@ -67,46 +82,27 @@ app.post("/auth", (req, res) => {
       res.status(500).send(err);
     } else {
       res.status(200).send(data);
-      console.log(data);
     }
   });
 });
 
-// app.post("/login", (req, res) => {
-//     const { username, password } = req.body;
-//     AuthData.find({username: username}, (err, data) =>{
-//         if(data){
-//             if(password === data.password){
-//                 res.status(200).send({username: username});
-//             } else{
-//                 res.status(500).send("Password is incorrect");
-//                 console.log(data);
-//             }
-//         } else{
-//             res.status(401).send("User is not registered");
-//         }
-//     })
-// })
-
-app.post("/login",(req,res)=>{
-  console.log(req.body);
-  const {username,password} = req.body;
-  AuthData.findOne({username:username},(err,data)=>{
-      if(data){
-         if(password === data.password){
-           res.send({message:"login success",data:data})
-          }else{
-             res.send({message:"Password not found"})
-         }
-      }else{
-          res.send({message:"User is not Registered"})
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  AuthData.findOne({ username: username }, (err, data) => {
+    if (data) {
+      if (password === data.password) {
+        res.send({ message: "login success", data: data });
+      } else {
+        res.send({ message: "Password not found" });
       }
-  })
+    } else {
+      res.send({ message: "User is not Registered" });
+    }
+  });
 });
 
 app.get("/getdata/:id", (req, res) => {
   const dataid = req.params.id;
-  console.log(dataid);
   Data.findById(dataid, (err, data) => {
     if (err) {
       res.status(500).send(err);
@@ -116,9 +112,6 @@ app.get("/getdata/:id", (req, res) => {
   });
 });
 
-// Data.find({}, (err,data) => {
-//     if(err) {console.log(err)}
-//     else {console.log(data)}
-// })
 
-app.listen(PORT, () => console.log(`Harsh is Listening on ${PORT}`));
+
+app.listen(PORT, () => console.log(`I am Listening on ${PORT}`));

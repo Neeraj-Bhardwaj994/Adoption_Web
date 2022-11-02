@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrap = styled.div``;
 
 export const LeftText = styled.h2`
-  color: #03175C;
+  color: #03175c;
   font-size: 4em;
   font-weight: bold;
   text-align: center;
@@ -15,7 +15,7 @@ export const LeftText = styled.h2`
 `;
 
 export const HighlightText = styled.h2`
-  color: #FBAF41;
+  color: #fbaf41;
   font-size: 2em;
   opacity: 0.8;
   text-align: center;
@@ -33,7 +33,7 @@ export const ThirdSection = styled.div`
 
   @media (max-width: 1000px) {
     flex-direction: column;
-}
+  }
 `;
 
 export const LeftDiv = styled.div`
@@ -63,7 +63,7 @@ export const LeftDiv = styled.div`
 `;
 
 export const RightDiv = styled.div`
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   height: 30em;
   width: 60%;
   @media (max-width: 500px) {
@@ -99,7 +99,6 @@ export const FormDiv = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-
 export const SecSection = styled.div`
   margin: 0em 0;
   display: flex;
@@ -119,16 +118,16 @@ export const Anchor = styled.a`
 `;
 
 export const Copyrighttext = styled.h6`
+  text-align: center;
+  color: #594545;
+`;
 
-text-align: center; 
- color: #594545;`;
-
- export const Heading = styled.h2`
+export const Heading = styled.h2`
   text-align: center;
   font-size: 2.5em;
- `;
+`;
 
- export const Para = styled.p`
+export const Para = styled.p`
   text-align: center;
   font-size: 1em;
- `;
+`;

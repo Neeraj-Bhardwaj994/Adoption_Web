@@ -11,7 +11,7 @@ export const Section = styled.section`
 export const Uppertext = styled.h1`
   font-size: 4em;
   text-align: center;
-  color: #03175C;
+  color: #03175c;
   font-weight: bold;
 
   @media (max-width: 768px) {
@@ -26,9 +26,8 @@ export const Uppertext = styled.h1`
 export const Lowertext = styled.h4`
   font-size: 2.5em;
   text-align: center;
-  color: #FBAF41;
+  color: #fbaf41;
   opacity: 0.8;
-
 
   @media (max-width: 768px) {
     font-size: 1.5em;
@@ -47,7 +46,7 @@ export const SecSection = styled.section`
 export const UppertextSec = styled.h1`
   text-decoration: underline;
   margin: 0.7em 0;
-  color: #03175C;
+  color: #03175c;
   font-size: 1.8em;
 
   @media (max-width: 768px) {
@@ -55,7 +54,7 @@ export const UppertextSec = styled.h1`
   }
 
   @media (max-width: 440px) {
-    font-size: 1.0em;
+    font-size: 1em;
   }
 `;
 
@@ -64,7 +63,7 @@ export const ButtonWrap = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2em 0;
-  transition: all .25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 
   &hover: {
     trasform: scale(1.2);
@@ -72,10 +71,9 @@ export const ButtonWrap = styled.div`
 `;
 
 export const Copyrighttext = styled.h6`
- text-align: center; 
- color: #594545;
+  text-align: center;
+  color: #594545;
 `;
-
 
 export const Smalltext = styled.h6`
   font-size: 1.5em;
