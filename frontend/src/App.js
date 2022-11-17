@@ -19,7 +19,7 @@ function App() {
         <Route path="/about" element={<Aboutpage />}></Route>
         <Route path="/contact" element={<Contactpage />}></Route>
         <Route
-          path="/admin&931Ea1nz7B&"
+          path="/admindashboard"
           element={
             user && user._id ? (
               <Adminpage />
@@ -29,7 +29,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/admincred3$vCtVAHJ505"
+          path="/admincred"
           element={<Adminauth setLoggedUser={setLoggedUser} />}
         ></Route>
 

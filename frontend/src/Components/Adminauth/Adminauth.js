@@ -5,9 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import { Form, Row, Col, FormGroup, Label, Input } from "reactstrap";
+import Snackbar from "@mui/material/Snackbar";
+import { Alert } from "@mui/material";
 
 function Adminauth({ setLoggedUser }) {
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
+  const [errdata, setErrdata] = useState();
 
   // const [logged, setLogged] = useState(false);
 
@@ -15,6 +19,13 @@ function Adminauth({ setLoggedUser }) {
     username: "",
     password: "",
   });
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
 
   // const [username, setUsername] = useState('');
   // const [password, setPassword] = useState('');
@@ -30,10 +41,11 @@ function Adminauth({ setLoggedUser }) {
 
   const getCred = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/login", data).then((response) => {
-      alert(response.data.message);
+    axios.post("http://apiserver.qmvsolution.com/login", data).then((response) => {
+      setOpen(true);
+      setErrdata(response.data.message);
       setLoggedUser(response.data.data);
-      navigate("/admin&931Ea1nz7B&");
+      navigate("/admindashboard");
       // window.localStorage.setItem("token", data.username);
       // window.localStorage.setItem("isLoggedIn", true);
     });
@@ -105,6 +117,20 @@ function Adminauth({ setLoggedUser }) {
             >
               Get in
             </Button>
+            <Snackbar
+              anchorOrigin={{ vertical: "top", horizontal: "center" }}
+              open={open}
+              autoHideDuration={2000}
+              onClose={handleClose}
+            >
+              <Alert
+                onClose={handleClose}
+                severity="info"
+                sx={{ width: "100%" }}
+              >
+                {errdata}
+              </Alert>
+            </Snackbar>
           </S.ButtonWrap>
         </Form>
       </S.SecSection>

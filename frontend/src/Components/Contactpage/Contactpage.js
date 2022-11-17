@@ -10,7 +10,7 @@ import axios from "axios";
 
 function Contactpage() {
   const [loading, setLoading] = useState(false);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -35,7 +35,7 @@ function Contactpage() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/contactdata", {
+      const res = await axios.post("http://localhost:5000/contactdata", {
         name: data.name,
         email: data.email,
         phonenumber: parseInt(data.phonenumber)

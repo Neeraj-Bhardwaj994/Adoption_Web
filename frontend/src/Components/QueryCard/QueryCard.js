@@ -7,11 +7,11 @@ import Typography from "@mui/material/Typography";
 import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
 import DownloadIcon from "@mui/icons-material/Download";
+import Tooltip from "@mui/material/Tooltip";
 
 const QueryCard = ({ value }) => {
   return (
     <S.Wrap>
-        
       <Card
         style={{
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
@@ -19,12 +19,14 @@ const QueryCard = ({ value }) => {
           borderRadius: 20,
           display: "flex",
         }}
-        sx={{ minWidth: 300, maxWidth: 210, my: 1 }}
+        sx={{ minWidth: 290, maxWidth: 350, my: 1, mx: 1 }}
       >
         <CardContent>
-          <Typography gutterBottom variant="h9" component="div">
-            {value.name}
-          </Typography>
+          <Tooltip title={value.name}>
+            <Typography gutterBottom variant="h9" component="div">
+              {value.name.slice(0, 17) + "..."}
+            </Typography>
+          </Tooltip>
           {/* <Typography gutterBottom variant="h9" component="div">
             {value.phonenumber ? value.phonenumber : "--"}
           </Typography>
@@ -50,5 +52,4 @@ const QueryCard = ({ value }) => {
     </S.Wrap>
   );
 };
-
 export default QueryCard;

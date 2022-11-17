@@ -28,20 +28,12 @@ function Aboutpage() {
               }}
             >
               <S.Heading>Sabar Foundation</S.Heading>
-              <S.Para>
-                {" "}
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.{" "}
-              </S.Para>
+              <S.Para>Maintenance going on</S.Para>
             </Box>
           </S.FormDiv>
         </S.RightDiv>
       </S.ThirdSection>
-      <S.SecSection>
+      {/* <S.SecSection>
         <Card
           sx={{ minWidth: 350, maxWidth: 360, minHeight: 150, my: 2 }}
           style={{
@@ -105,7 +97,7 @@ function Aboutpage() {
             </Typography>
           </CardContent>
         </Card>
-      </S.SecSection>
+      </S.SecSection> */}
       <S.Copyrighttext>Copyright 2022 - Sabar Foundation</S.Copyrighttext>
     </S.Wrap>
   );

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 const Header = () => {

@@ -20,6 +20,10 @@ export const Text = styled.h1`
   @media (max-width: 768px) {
     font-size: 3em;
   }
+
+  @media (max-width: 440px) {
+    font-size: 2em;
+  }
 `;
 
 export const SecSection = styled.div`

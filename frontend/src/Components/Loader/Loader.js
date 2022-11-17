@@ -6,7 +6,7 @@ import LoaderAnimation from "./Loader.json";
 const Loader = () => {
   return (
     <S.Wrap>
-      <Lottie animationData={LoaderAnimation} loop={true} />;
+      <Lottie animationData={LoaderAnimation} loop={true} />
     </S.Wrap>
   );
 };

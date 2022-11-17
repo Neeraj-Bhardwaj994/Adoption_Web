@@ -2,22 +2,22 @@ import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import { Form, FormGroup, Input, Label } from "reactstrap";
 import axios from "axios";
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import DataCard from "../Card/Card";
-import ContactCard from "../QueryCard/QueryCard"
+import ContactCard from "../QueryCard/QueryCard";
 import HeaderLogin from "../HeaderLogin/HeaderLogin";
 import { CSVLink } from "react-csv";
 import { Button } from "@mui/material";
 import Pagination from "../Pagination/Pagination";
 import Loading from "../Loader/Loader";
 import Badge from "@mui/material/Badge";
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Box from '@mui/material/Box';
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Box from "@mui/material/Box";
 
 function Adminpage() {
   const [getdata, setGetdata] = useState([]);
@@ -74,13 +74,13 @@ function Adminpage() {
     async function fetchData() {
       setLoading(true);
       const fetchingData = await axios
-        .get("http://localhost:3000/getdata")
+        .get("http://localhost:5000/getdata")
         .then((response) => {
           setGetdata(response.data);
           setLoading(false);
         });
       const fetchingContactData = await axios
-        .get("http://localhost:3000/getcontactdata")
+        .get("http://localhost:5000/getcontactdata")
         .then((response) => {
           setGetquerydata(response.data);
         });
@@ -90,14 +90,14 @@ function Adminpage() {
 
   const getMoredetails = async (id) => {
     const fetchingModalData = await axios
-      .get(`http://localhost:3000/getdata/${id}`)
+      .get(`http://localhost:5000/getdata/${id}`)
       .then((response) => {
         setModaldata(response.data);
       });
   };
 
   // const deleteCard = (id) => {
-  //   axios.delete(`http://localhost:3000/getdata/${id}`).then((result) => {
+  //   axios.delete(`http://localhost:5000/getdata/${id}`).then((result) => {
   //     result.json().then((res) => {
   //       console.log(res)
   //     })
@@ -105,34 +105,16 @@ function Adminpage() {
   // }
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
 
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                Hello
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
 
   return (
     <S.Wrap>
@@ -143,18 +125,28 @@ function Adminpage() {
 
       <S.SecSection>
         <S.UppertextSec>Form filled by:</S.UppertextSec>
-        <Badge badgeContent={querylength} color="primary" style={{ float: "right" }}>
-        <NotificationsIcon style={{ float: "right", color: "#03175C", cursor: "pointer", marginLeft: "0.2em" }} onClick={toggleDrawer("right", true)}/>
+        <Badge
+          badgeContent={querylength}
+          color="primary"
+          style={{ float: "right" }}
+        >
+          <NotificationsIcon
+            style={{
+              float: "right",
+              color: "#03175C",
+              cursor: "pointer",
+              marginLeft: "0.2em",
+            }}
+            onClick={toggleDrawer("right", true)}
+          />
           <Drawer
             anchor={"right"}
             open={state["right"]}
             onClose={toggleDrawer("right", false)}
           >
-            <S.QueryText>Want to connect:</S.QueryText>
-            {getquerydata.map((value, key) => {
-              return(
-                <ContactCard key={key} value={value} />
-              )
+            <S.QueryText>People Want to connect:</S.QueryText>
+            {getquerydata.sort((a, b) => a.name.localeCompare(b.name)).map((value, key) => {
+              return <ContactCard key={key} value={value} />;
             })}
           </Drawer>
         </Badge>

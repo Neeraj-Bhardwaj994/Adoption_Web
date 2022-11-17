@@ -59,7 +59,7 @@ const HeaderLogin = () => {
         </S.Navitems>
         <S.Navitems>
           <Link
-            to="/admincred3$vCtVAHJ505"
+            to="/admincred"
             style={{
               color: "#03175C",
               textDecoration: "none",
@@ -110,7 +110,7 @@ const HeaderLogin = () => {
             </MenuItem>
             <MenuItem onClick={handleClose}>
               <Link
-                to="/admincred3$vCtVAHJ505"
+                to="/admincred"
                 style={{ color: "#000", textDecoration: "none" }}
               >
                 Logout
